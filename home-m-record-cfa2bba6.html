@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f3f4f6;
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 3.2rem 2.4rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e5e7eb;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "●";
+            position: absolute;
+            top: 1.2rem;
+            left: 1.8rem;
+            font-size: 0.75rem;
+            color: #9ca3af;
+            letter-spacing: 4px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #111827;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.1rem;
+            color: #4b5563;
+            border-left: 3px solid #d1d5db;
+            padding-left: 1.2rem;
+            margin-top: 0.6rem;
+        }
+
+        .badge-tag {
+            display: inline-block;
+            background: #f9fafb;
+            border: 1px solid #d1d5db;
+            border-radius: 40px;
+            padding: 0.2rem 1.2rem;
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-top: 1.2rem;
+        }
+
+        /* card分栏卡片体系 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            border: 1px solid #e2e5ea;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 480;
+            letter-spacing: -0.01em;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #d1d5db;
+            padding-bottom: 0.5rem;
+        }
+
+        .card p {
+            margin-bottom: 0.9rem;
+            color: #374151;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .meta-note {
+            background: #f8f9fb;
+            padding: 1rem 1.4rem;
+            border-radius: 14px;
+            border-left: 4px solid #cbd5e1;
+            font-size: 0.95rem;
+            color: #3f4a5a;
+            margin: 1rem 0 0.2rem 0;
+        }
+
+        .faq-compact {
+            margin-top: 1rem;
+        }
+
+        .faq-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #1f2937;
+            min-width: 6em;
+        }
+
+        .faq-a {
+            color: #4b5563;
+        }
+
+        .inline-link {
+            color: #1f2937;
+            text-decoration: none;
+            border-bottom: 1px solid #9ca3af;
+            padding-bottom: 1px;
+            font-weight: 470;
+            transition: border-color 0.15s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #1f2937;
+        }
+
+        .section-footer {
+            margin-top: 2.5rem;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            border: 1px solid #e2e5ea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            text-align: center;
+        }
+
+        .section-footer p {
+            color: #4b5563;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+        }
+
+        .section-footer .foot-note {
+            font-size: 0.9rem;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1.2rem;
+            margin-top: 0.6rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .hero {
+                padding: 2rem 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .faq-item {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .faq-q {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>开云 · 信息与索引</h1>
+        <div class="subhead">一份关于站点的背景、定位与使用说明</div>
+        <span class="badge-tag">整理于 2025 · 春季</span>
+    </div>
+
+    <!-- 卡片式三段自然介绍 -->
+    <div class="card-grid">
+
+        <div class="card">
+            <h2>站点背景</h2>
+            <p>
+                <a href="https://home-m-ky.com" class="inline-link">开云</a> 是一个面向特定信息检索与资源协调的轻量级门户。
+                其设计初衷并非提供泛化内容，而是为有明确需求的访问者提供一个集中、干净的入口。
+                站点结构简洁，以功能导向为主，没有冗余的装饰性板块。
+            </p>
+            <p>
+                从运营层面看，该站点保持低调且克制的呈现风格，不追踪用户行为，也不主动推送信息流。
+                如果你已经通过其他渠道了解到相关背景，那么主页会帮助你快速定位所需内容；
+                反之，若你初次接触，建议先阅读本页的概述，以便对站点的性质形成清晰认知。
+            </p>
+            <div class="meta-note">
+                ⚬ 站点无广告、无第三方追踪脚本，仅保留必要的功能性连接。
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>内容与可信说明</h2>
+            <p>
+                本页面所描述的 <a href="https://home-m-ky.com" class="inline-link">开云</a> 并非内容生产平台，
+                而是一个导航与索引性质的页面集合。所有链接指向的外部资源，其准确性与时效性由各自来源负责。
+                站内没有用户生成内容模块，也不设评论区或论坛，最大程度减少信息混杂的可能。
+            </p>
+            <p>
+                对于访问者而言，这意味着你可以将站点视为一张经过筛选的参考列表。
+                每个链接在收录时都经过基础可用性核验，但由于网络环境变化，无法保证每一条目永久有效。
+                建议在使用过程中结合自身判断，并留意页面标注的最后更新日期。
+            </p>
+            <div class="meta-note">
+                ⚬ 信息核验基准：链接可访问、标题与描述一致、无恶意重定向。
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>常见问题摘要</h2>
+            <div class="faq-compact">
+                <div class="faq-item">
+                    <span class="faq-q">Q：是否收费？</span>
+                    <span class="faq-a">完全免费开放，无需注册或登录即可浏览全部内容。</span>
+                </div>
+                <div class="faq-item">
+                    <span class="faq-q">Q：更新频率？</span>
+                    <span class="faq-a">不定期维护，逢重大链接变动或季节性调整时会集中更新。</span>
+                </div>
+                <div class="faq-item">
+                    <span class="faq-q">Q：如何反馈？</span>
+                    <span class="faq-a">当前未设公开反馈表单，你可在了解背景后自行判断使用方式。</span>
+                </div>
+            </div>
+            <p style="margin-top: 1.2rem;">
+                更多细节可参考站点主页各板块的说明。需要重申的是，
+                <a href="https://home-m-ky.com" class="inline-link">开云</a> 保持小而清晰的信息呈现，
+                不为追求复杂而增加层级。
+            </p>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="section-footer">
+        <p>如果你已经了解以上背景，并希望直接访问站内索引，</p>
+        <p>可前往主页进一步浏览。<br>站点名称：<a href="https://home-m-ky.com" class="inline-link">开云</a></p>
+        <div class="foot-note">
+            ⚬ 本介绍页仅作说明用途，与站点内容无直接绑定关系 · 最后更新 2025-04
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
