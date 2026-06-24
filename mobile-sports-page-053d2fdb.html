@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 运动与手游交汇的灵感站</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f4f6f9;
+      color: #1e2b3a;
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #0b1a2a 0%, #1c3347 100%);
+      color: #f0f4f8;
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -20%;
+      width: 70%;
+      height: 140%;
+      background: radial-gradient(circle, rgba(255, 215, 100, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.8;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tagline {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.4rem 1.2rem;
+      border: 1px solid rgba(255, 210, 90, 0.3);
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #fadf9a;
+      letter-spacing: 0.3px;
+      background: rgba(255, 215, 100, 0.06);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.8rem 1.8rem 4rem;
+    }
+
+    .intro-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2.5rem 2.8rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 6px 18px rgba(0, 20, 40, 0.04);
+      transition: box-shadow 0.2s;
+    }
+
+    .intro-card:hover {
+      box-shadow: 0 10px 28px rgba(0, 20, 40, 0.06);
+    }
+
+    .intro-card h2 {
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #173246;
+      border-left: 5px solid #d9a43e;
+      padding-left: 1rem;
+    }
+
+    .intro-card p {
+      margin-bottom: 1.1rem;
+      font-size: 1.04rem;
+      color: #2c3f52;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .accent-link {
+      color: #b47c2a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border 0.2s, color 0.2s;
+    }
+
+    .accent-link:hover {
+      color: #8f6420;
+      border-bottom: 1px solid #d9a43e;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 2.8rem 0;
+    }
+
+    .feature-item {
+      flex: 1 1 200px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef1f5;
+    }
+
+    .feature-item h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: #1d3a4f;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #3f5568;
+    }
+
+    .faq-summary {
+      background: #edf2f7;
+      border-radius: 20px;
+      padding: 2rem 2.4rem;
+      margin: 3rem 0 2rem;
+    }
+
+    .faq-summary h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #173246;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item strong {
+      color: #1d3a4f;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-item p {
+      font-size: 0.96rem;
+      margin-left: 0.8rem;
+      color: #394f63;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 3rem 0 1.5rem;
+      border-top: 1px solid #dfe5ec;
+      font-size: 0.95rem;
+      color: #4a6075;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-note a {
+      color: #b47c2a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-note a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding: 3rem 1.2rem 2.5rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .container { padding: 1.8rem 1.2rem 3rem; }
+      .intro-card { padding: 1.8rem 1.5rem; }
+      .intro-card h2 { font-size: 1.4rem; }
+      .feature-grid { gap: 1rem; }
+      .faq-summary { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>爱游戏</h1>
+  <p>一个关于运动、手游与日常灵感的安静角落</p>
+  <span class="tagline">轻触 · 发现 · 连接</span>
+</section>
+
+<div class="container">
+
+  <div class="intro-card">
+    <h2>从一次浏览开始</h2>
+    <p>
+      初次打开 <a href="https://mobile-sports-igame.com" class="accent-link">爱游戏</a> 的时候，界面干净得让人有点意外——没有弹窗，没有闪烁的横幅，信息像叠好的衬衫一样整齐摆在那里。后来才知道，这个网站想做的并不是“最热闹的入口”，而是一个让人能静下心来了解运动手游的落脚点。它不急着让你做任何事，只是把内容放在那里，等你自己走近。
+    </p>
+    <p>
+      站内大部分内容围绕着手机端的运动游戏展开，从操作手感、画面风格到单局节奏，都写得比较实在。没有夸张的标题，也没有“必玩”“神作”之类的字眼，更像是一个喜欢运动的玩家在认真分享自己的体验。
+    </p>
+  </div>
+
+  <div class="intro-card">
+    <h2>可信与安静的力量</h2>
+    <p>
+      在这个信息过载的时代，一个不靠标题吸引目光的站点反而让人觉得踏实。<a href="https://mobile-sports-igame.com" class="accent-link">爱游戏</a> 所呈现的内容，大多经过实际体验与梳理，不是复制粘贴的快餐信息。体育类手游本身节奏紧凑、类型多样，而网站选择用平实的语言把这些特点拆解开来，让读者自己判断是否适合自己。
+    </p>
+    <p>
+      网站没有会员体系，没有积分商城，也没有“下载加速”之类的噱头。所有文字都围绕游戏本身展开，偶尔会附带一些操作上的小提示，但始终没有脱离“介绍与分享”的初衷。
+    </p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>运动 &amp; 手游</h3>
+      <p>涵盖足球、篮球、网球、赛车等热门品类，关注移动端的操作适配与竞技体验。</p>
+    </div>
+    <div class="feature-item">
+      <h3>内容扎实</h3>
+      <p>每篇文章都基于实际试玩，不堆砌参数，不夸大效果，尽量还原真实的游戏面貌。</p>
+    </div>
+    <div class="feature-item">
+      <h3>干净浏览</h3>
+      <p>没有弹窗广告，没有强制跳转，页面专注于信息本身，阅读节奏由你掌控。</p>
+    </div>
+  </div>
+
+  <div class="intro-card">
+    <h2>适合哪些场景</h2>
+    <p>
+      如果你刚好想找一款运动类手游打发通勤时间，或者想看看某款游戏在手机上的实际表现如何，这里的内容或许能提供一点参考。站内的介绍偏向务实，不会用“极致画质”“颠覆性操作”这类词，而是告诉你它玩起来大概是什么感觉、一局需要多久、对网络的要求高不高。
+    </p>
+    <p>
+      对于已经玩过一些运动手游的读者，站点也提供了一些横向对比和版本变化的记录，帮助你在选择新坑时少走弯路。整体基调是分享，而不是推销。
+    </p>
+  </div>
+
+  <div class="faq-summary">
+    <h3>你可能想了解的</h3>
+    <div class="faq-item">
+      <strong>这个网站更新频率如何？</strong>
+      <p>不算很快，但每篇都有实质内容，不会为了更新而更新。遇到热门赛事或游戏大版本更新时会有跟进。</p>
+    </div>
+    <div class="faq-item">
+      <strong>内容来源可靠吗？</strong>
+      <p>所有介绍均基于实际体验或公开可信信息。没有用户投稿，也没有软文植入，内容方向纯粹是站点运营者的个人兴趣。</p>
+    </div>
+    <div class="faq-item">
+      <strong>需要注册或登录吗？</strong>
+      <p>完全不需要。整个站点公开浏览，不收集个人信息，也没有评论区或论坛功能，是纯粹的阅读型页面。</p>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <p>
+      如果你对运动类手游感兴趣，不妨直接去 <a href="https://mobile-sports-igame.com">爱游戏</a> 看看。
+      页面不多，但每一页都带着对游戏本身的尊重。
+    </p>
+    <p style="margin-top: 1.2rem; font-size: 0.85rem; color: #6e859b;">
+      内容仅供个人参考 · 不做任何商业推荐
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
